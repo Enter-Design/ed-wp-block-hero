@@ -1,3 +1,4 @@
+import { TextControl } from '@wordpress/components';
 /**
  * Retrieves the translation of text.
  *
@@ -24,10 +25,14 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { className } ) {
+export default function Edit( { className, attributes, setAttributes } ) {
 	return (
-		<p className={ className }>
-			{ __( 'Ed Block Hero – hello from the editor!', 'ed-block-hero' ) }
-		</p>
+		<div className={ className }>
+			<TextControl
+				label={ __( 'Title', 'ed-block-hero' ) }
+				value={ attributes.title }
+				onChange={ ( val ) => setAttributes( { message: val } ) }
+			/>
+		</div>
 	);
 }

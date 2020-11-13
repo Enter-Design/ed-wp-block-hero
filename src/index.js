@@ -68,6 +68,14 @@ registerBlockType( 'create-block/ed-block-hero', {
 		html: false,
 	},
 
+	attributes: {
+		title: {
+			type: 'string',
+			source: 'text',
+			selector: 'div',
+		},
+	},
+
 	/**
 	 * @see ./edit.js
 	 */
