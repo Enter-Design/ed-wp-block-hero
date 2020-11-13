@@ -38,8 +38,8 @@ export default function Edit( {
 				<div>{ attributes.message }</div>
 			) : (
 				<Placeholder
-					label="Gutenpride Block"
-					instructions="Add your message"
+					label="Hero Block"
+					instructions="Add Hero Text"
 				>
 					<TextControl
 						value={ attributes.message }

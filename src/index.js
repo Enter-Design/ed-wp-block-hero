@@ -69,7 +69,7 @@ registerBlockType( 'create-block/ed-block-hero', {
 	},
 
 	attributes: {
-		title: {
+		message: {
 			type: 'string',
 			source: 'text',
 			selector: 'div',
