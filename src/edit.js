@@ -1,4 +1,5 @@
-import { TextControl } from '@wordpress/components';
+import { Placeholder, TextControl } from '@wordpress/components';
+
 /**
  * Retrieves the translation of text.
  *
@@ -25,14 +26,29 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { className, attributes, setAttributes } ) {
+export default function Edit( {
+								  attributes,
+								  className,
+								  isSelected,
+								  setAttributes,
+							  } ) {
 	return (
 		<div className={ className }>
-			<TextControl
-				label={ __( 'Title', 'ed-block-hero' ) }
-				value={ attributes.title }
-				onChange={ ( val ) => setAttributes( { message: val } ) }
-			/>
+			{ attributes.message && ! isSelected ? (
+				<div>{ attributes.message }</div>
+			) : (
+				<Placeholder
+					label="Gutenpride Block"
+					instructions="Add your message"
+				>
+					<TextControl
+						value={ attributes.message }
+						onChange={ ( val ) =>
+							setAttributes( { message: val } )
+						}
+					/>
+				</Placeholder>
+			) }
 		</div>
 	);
 }

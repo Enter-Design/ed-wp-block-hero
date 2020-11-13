@@ -14,13 +14,6 @@ import { __ } from '@wordpress/i18n';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
-	return (
-		<p>
-			{ __(
-				'Ed Block Hero – hello from the saved content!',
-				'ed-block-hero'
-			) }
-		</p>
-	);
+export default function Save( { attributes, className } ) {
+	return <div className={ className }>{ attributes.message }</div>;
 }
