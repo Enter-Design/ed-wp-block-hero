@@ -6,6 +6,30 @@
  */
 
 .wp-block-create-block-ed-block-hero {
-	background-color: var(--wp-admin-theme-color);
-	padding: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  h1 {
+	position: absolute;
+	margin: 2rem;
+	z-index: 100;
+	color: white;
+  }
+
+  .hero-image-wrapper {
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+  }
+
+  .hero-image {
+	position: relative;
+	width: 100%;
+	object-fit: cover;
+  }
 }

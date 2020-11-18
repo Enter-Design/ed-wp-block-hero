@@ -4,6 +4,13 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+
+.editor-styles-wrapper .wp-block-create-block-ed-block-hero {
+  h1 {
+	color: white;
+  }
+}
+
 .wp-block-create-block-ed-block-hero {
-	border: 1px dotted #f00;
+  overflow: hidden;
 }

@@ -69,11 +69,20 @@ registerBlockType( 'create-block/ed-block-hero', {
 	},
 
 	attributes: {
-		message: {
+		heroText: {
 			type: 'string',
 			source: 'text',
 			selector: 'div',
 		},
+		heroImageID: {
+			type: 'number',
+		},
+		heroImageURL: {
+			type: 'string',
+			source: 'attribute',
+			selector: 'img',
+			attribute: 'src',
+		}
 	},
 
 	/**

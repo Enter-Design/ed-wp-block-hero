@@ -4,6 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
+import {RichText} from "@wordpress/block-editor";
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,5 +16,21 @@ import { __ } from '@wordpress/i18n';
  * @return {WPElement} Element to render.
  */
 export default function Save( { attributes, className } ) {
-	return <div className={ className }>{ attributes.message }</div>;
+
+	return (
+		<div className={ className }>
+			<RichText.Content tagName="h1" value={ attributes.heroText } />
+
+			{ attributes.heroImageURL && (
+				<div className="hero-image-wrapper">
+				<img
+					className="hero-image"
+					src={ attributes.heroImageURL }
+					alt={ __( 'Hero Image' ) }
+				/>
+				</div>
+			) }
+		</div>
+	);
+
 }

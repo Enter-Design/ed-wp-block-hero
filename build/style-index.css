@@ -5,8 +5,27 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-create-block-ed-block-hero {
-  background-color: var(--wp-admin-theme-color);
-  padding: 2px; }
+  position: relative;
+  display: flex;
+  align-items: center; }
+  .wp-block-create-block-ed-block-hero h1 {
+    position: absolute;
+    margin: 2rem;
+    z-index: 100;
+    color: white; }
+  .wp-block-create-block-ed-block-hero .hero-image-wrapper {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; }
+  .wp-block-create-block-ed-block-hero .hero-image {
+    position: relative;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
 
 
 /*# sourceMappingURL=style-index.css.map*/

@@ -1,4 +1,5 @@
-import { Placeholder, TextControl } from '@wordpress/components';
+import {Button, TextControl} from '@wordpress/components';
+import {MediaUpload, RichText} from '@wordpress/block-editor';
 
 /**
  * Retrieves the translation of text.
@@ -29,26 +30,56 @@ import './editor.scss';
 export default function Edit( {
 								  attributes,
 								  className,
-								  isSelected,
 								  setAttributes,
 							  } ) {
+
+	const onSelectImage = ( media ) => {
+		setAttributes( {
+			heroImageURL: media.url,
+			heroImageID: media.id,
+		} );
+
+	};
+
+	const onChangeTitle = ( value ) => {
+		setAttributes( { heroText: value })
+	};
+
 	return (
 		<div className={ className }>
-			{ attributes.message && ! isSelected ? (
-				<div>{ attributes.message }</div>
-			) : (
-				<Placeholder
-					label="Hero Block"
-					instructions="Add Hero Text"
-				>
-					<TextControl
-						value={ attributes.message }
-						onChange={ ( val ) =>
-							setAttributes( { message: val } )
-						}
-					/>
-				</Placeholder>
-			) }
+			<RichText
+				tagName="h1"
+				placeholder={ __( 'Write Hero Text Here' ) }
+				value={ attributes.heroText }
+				onChange={ onChangeTitle }
+			/>
+
+			<div className="hero-image">
+				<MediaUpload
+					onSelect={ onSelectImage }
+					allowedTypes="image"
+					value={ attributes.heroImageID }
+					render={ ( { open } ) => (
+						<Button
+							className={
+								attributes.heroImageID
+									? 'image-button'
+									: 'button button-large'
+							}
+							onClick={ open }
+						>
+							{ ! attributes.heroImageID ? (
+								__( 'Upload Hero Image' )
+							) : (
+								<img
+									src={ attributes.heroImageURL }
+									alt={ __( 'Uploaded Hero Image' ) }
+								/>
+							) }
+						</Button>
+					) }
+				/>
+			</div>
 		</div>
 	);
 }
