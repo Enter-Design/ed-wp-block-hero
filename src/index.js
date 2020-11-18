@@ -58,7 +58,7 @@ registerBlockType( 'create-block/ed-block-hero', {
 	 * An icon property should be specified to make it easier to identify a block.
 	 * These can be any of WordPress’ Dashicons, or a custom svg element.
 	 */
-	icon: 'smiley',
+	icon: 'admin-tools',
 
 	/**
 	 * Optional block extended support features.

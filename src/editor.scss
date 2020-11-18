@@ -5,12 +5,14 @@
  */
 
 
-.editor-styles-wrapper .wp-block-create-block-ed-block-hero {
-  h1 {
-	color: white;
+.editor-styles-wrapper {
+  .wp-block-create-block-ed-block-hero {
+	h1 {
+	  color: white;
+	}
   }
-}
 
-.wp-block-create-block-ed-block-hero {
-  overflow: hidden;
+  .wp-block-create-block-ed-block-hero {
+	overflow: hidden;
+  }
 }

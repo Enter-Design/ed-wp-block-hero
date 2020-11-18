@@ -42,7 +42,7 @@ export default function Edit( {
 	};
 
 	const onChangeTitle = ( value ) => {
-		setAttributes( { heroText: value })
+		setAttributes( { heroText: value } )
 	};
 
 	return (
